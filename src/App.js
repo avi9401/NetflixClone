@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import { Routes, Route } from 'react-router-dom'
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthContextProvider }  from './context/AuthContext'
 import Home from './pages/Home'
 import Account from './pages/Account'
@@ -12,16 +12,18 @@ import ProtectedRoute from './components/ProtectedRoute'
 const App = () => {
   return (
     <>
-    <AuthContextProvider>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/account' element={
-        <ProtectedRoute> <Account /> </ProtectedRoute>} />
-      </Routes>
-    </AuthContextProvider>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <AuthContextProvider>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/account' element={
+          <ProtectedRoute> <Account /> </ProtectedRoute>} />
+        </Routes>
+      </AuthContextProvider>
+    </BrowserRouter>
     </>
   )
 }
