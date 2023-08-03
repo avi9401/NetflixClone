@@ -1,3 +1,10 @@
+#warning
+
+due to underlying reasons mostly due to lack of security and similarity to 'netflix' 
+the link might be flagged as deceptive on your broswer, you can still view the website
+as it is merely a project and you can login via made-up username/password.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
